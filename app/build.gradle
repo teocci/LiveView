@@ -5,8 +5,8 @@ android {
     buildToolsVersion "23.0.2"
 
     defaultConfig {
-        applicationId "com.example.liveview"
-        minSdkVersion 17
+        applicationId "com.liveview"
+        minSdkVersion 19
         targetSdkVersion 21
     }
 

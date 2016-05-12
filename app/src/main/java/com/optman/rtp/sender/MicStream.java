@@ -1,22 +1,16 @@
 package com.optman.rtp.sender;
 
-import java.io.IOException;
-import java.nio.ByteBuffer;
-
-import com.optman.rtp.sender.RtpAacStream;
-import com.optman.rtp.sender.RtpSocket;
-
 import android.media.AudioFormat;
 import android.media.AudioRecord;
 import android.media.MediaCodec;
+import android.media.MediaCodec.BufferInfo;
 import android.media.MediaCodecInfo;
 import android.media.MediaFormat;
-import android.media.MediaMuxer;
 import android.media.MediaRecorder;
-import android.media.MediaCodec.BufferInfo;
-import android.media.MediaMuxer.OutputFormat;
-import android.os.Environment;
 import android.util.Log;
+
+import java.io.IOException;
+import java.nio.ByteBuffer;
 
 
 @SuppressWarnings("deprecation")

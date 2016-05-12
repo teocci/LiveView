@@ -1,19 +1,16 @@
 package com.optman.rtp.sender;
 
-import java.io.IOException;
-import java.nio.ByteBuffer;
-
-import com.optman.rtp.sender.RtpAvcStream;
-import com.optman.rtp.sender.RtpSocket;
-
 import android.graphics.ImageFormat;
 import android.hardware.Camera;
 import android.hardware.Camera.Size;
 import android.media.MediaCodec;
+import android.media.MediaCodec.BufferInfo;
 import android.media.MediaCodecInfo;
 import android.media.MediaFormat;
-import android.media.MediaCodec.BufferInfo;
 import android.util.Log;
+
+import java.io.IOException;
+import java.nio.ByteBuffer;
 
 
 @SuppressWarnings("deprecation")
@@ -55,7 +52,7 @@ public class CameraStream extends RtpAvcStream{
 		MediaFormat mediaFormat = MediaFormat.createVideoFormat("video/avc", size.width, size.height);
 		mediaFormat.setInteger(MediaFormat.KEY_BIT_RATE, 2*1000*1000);
 		mediaFormat.setInteger(MediaFormat.KEY_FRAME_RATE, 15);
-		mediaFormat.setInteger(MediaFormat.KEY_COLOR_FORMAT, MediaCodecInfo.CodecCapabilities.COLOR_FormatYUV420SemiPlanar);
+		mediaFormat.setInteger(MediaFormat.KEY_COLOR_FORMAT, MediaCodecInfo.CodecCapabilities.COLOR_FormatYUV420Planar);
 		mediaFormat.setInteger(MediaFormat.KEY_I_FRAME_INTERVAL, 1);
 		mMediaCodec.configure(mediaFormat, null, null, MediaCodec.CONFIGURE_FLAG_ENCODE);
 		mMediaCodec.start();
